@@ -1,16 +1,19 @@
-package pageobject;
-import org.cucumber.runner.BaseClass;
+package org.cucumber.pageobject;
+import org.cucumber.utility.BaseClass;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Origan {
+import java.util.List;
 
-   /* public class Origan(WebDriver driver){
+
+public class Orikan extends BaseClass {
+
+    public Orikan(WebDriver driver) {
         PageFactory.initElements(driver, this);
-    }*/
-
+    }
     //objects created
     @FindBy(id="emailAddress")
     private WebElement EmailAddress;
@@ -57,7 +60,7 @@ public class Origan {
     public WebElement getConfirmPasswordErrMsg(){
         return ConfirmPasswordErrMsg;
     }
-    @FindBy(xpath="//button[contains(text(), 'Next')]")
+    @FindBy(xpath="//button[contains(text(),'Next')]")
     private WebElement NextButton;
     public WebElement getNextButton(){
         return NextButton;
@@ -83,6 +86,7 @@ public class Origan {
     public WebElement getLastNameLabel(){
         return LastNameLabel;
     }
+
     @FindBy(id="lastName")
     private WebElement LastName;
     public WebElement getLastName(){
@@ -108,6 +112,7 @@ public class Origan {
     public WebElement getAddLine1Label(){
         return AddLine1Label;
     }
+
     @FindBy(id="addressLine1")
     private WebElement AddLine1;
     public WebElement getAddLine1(){
@@ -169,10 +174,16 @@ public class Origan {
         return CityErrMsg;
     }
     @FindBy(xpath="//select[@id='state']")
+    private List<WebElement> StateDropdown;
+    public List<WebElement> getStateDropdown(){
+        return StateDropdown;
+    }
+    @FindBy(id="state")
     private WebElement State;
-    public WebElement getStat(){
+    public WebElement getState(){
         return State;
     }
+
     @FindBy(xpath="//label[contains(text(),'State')]")
     private WebElement StateLabel;
     public WebElement getStateLabel(){
@@ -227,6 +238,11 @@ public class Origan {
     private WebElement CardNumberErrMsg;
     public WebElement getCardNumberErrMsg(){
         return CardNumberErrMsg;
+    }
+    @FindBy(id="cardCVV")
+    private WebElement CVV;
+    public WebElement getCVV(){
+        return CVV;
     }
     @FindBy(xpath="//label[contains(text(),'Card Expiry Month')]")
     private WebElement CardExpMonLabel;
