@@ -10,6 +10,8 @@ public class Origan {
    /* public class Origan(WebDriver driver){
         PageFactory.initElements(driver, this);
     }*/
+
+    //objects created
     @FindBy(id="emailAddress")
     private WebElement EmailAddress;
     public WebElement getEmailAddress(){
